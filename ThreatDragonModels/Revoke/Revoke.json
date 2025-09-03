@@ -97,6 +97,58 @@
           },
           {
             "position": {
+              "x": 419.99999999999955,
+              "y": 781.0000000000028
+            },
+            "size": {
+              "width": 1230,
+              "height": 250
+            },
+            "attrs": {
+              "label": {
+                "text": "Logic Layer / Backend"
+              }
+            },
+            "visible": true,
+            "shape": "trust-boundary-box",
+            "id": "993175aa-d9c7-41a5-9fe3-b78c0fd09386",
+            "zIndex": -1,
+            "data": {
+              "type": "tm.BoundaryBox",
+              "name": "Logic Layer / Backend",
+              "description": "",
+              "isTrustBoundary": true,
+              "hasOpenThreats": false
+            }
+          },
+          {
+            "position": {
+              "x": 450,
+              "y": 1190
+            },
+            "size": {
+              "width": 650,
+              "height": 270
+            },
+            "attrs": {
+              "label": {
+                "text": "Model Layer"
+              }
+            },
+            "visible": true,
+            "shape": "trust-boundary-box",
+            "id": "bf2c6a01-7dd9-40bd-b995-18dd9de1581f",
+            "zIndex": -1,
+            "data": {
+              "type": "tm.BoundaryBox",
+              "name": "Model Layer",
+              "description": "Just for the database",
+              "isTrustBoundary": true,
+              "hasOpenThreats": false
+            }
+          },
+          {
+            "position": {
               "x": 73.75,
               "y": 60
             },
@@ -334,8 +386,8 @@
           },
           {
             "position": {
-              "x": 610,
-              "y": 970
+              "x": 650,
+              "y": 1230
             },
             "size": {
               "width": 120,
@@ -999,7 +1051,52 @@
               "cell": "98582c4f-c250-4c2a-bfe1-a152ef8bb2ae",
               "port": "af3f2af3-b887-41d5-ad5e-a4012243252f"
             },
-            "vertices": [],
+            "vertices": []
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": "block"
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Request/Validation",
+              "description": "Use a sql quesry",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": true,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "sql",
+              "threats": []
+            },
+            "labels": [
+              "Request/Validation"
+            ],
+            "id": "fb6514ee-6eed-41d1-8c62-1b8076edf4a2",
+            "source": {
+              "cell": "5eceff3b-3061-43e0-9e91-2132546eac91",
+              "port": "28a27b4b-b4f1-46b5-8cb9-5f2fba15a3fc"
+            },
+            "target": {
+              "cell": "9aed26e7-a4e2-4346-a8b1-3f4c3d90ca29",
+              "port": "bf444229-ef8a-41ac-9902-7656bac45455"
+            },
             "tools": {
               "items": [
                 "boundary",
@@ -1009,7 +1106,59 @@
                 "target-arrowhead"
               ],
               "name": null
-            }
+            },
+            "vertices": [
+              {
+                "x": 710,
+                "y": 1210
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "User validation",
+              "description": "See if user exist.",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": true,
+              "isPublicNetwork": false,
+              "protocol": "TCP",
+              "threats": []
+            },
+            "labels": [
+              "User validation"
+            ],
+            "id": "38f99766-c0b4-4cb7-ae80-3fa4285a1e7f",
+            "source": {
+              "x": 690,
+              "y": 550
+            },
+            "target": {
+              "cell": "5eceff3b-3061-43e0-9e91-2132546eac91",
+              "port": "af0f4dfb-f6fc-4d5c-b229-2d7bf1e91eb5"
+            },
+            "vertices": []
           },
           {
             "position": {
@@ -1168,6 +1317,126 @@
               "type": "tm.Process",
               "name": "2FA",
               "description": "Can be a phone call or other things for the client.",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "handlesCardPayment": false,
+              "handlesGoodsOrServices": false,
+              "isWebApplication": false,
+              "privilegeLevel": "",
+              "threats": []
+            }
+          },
+          {
+            "position": {
+              "x": 640,
+              "y": 841
+            },
+            "size": {
+              "width": 90,
+              "height": 100
+            },
+            "attrs": {
+              "text": {
+                "text": "Login Logic"
+              },
+              "body": {
+                "stroke": "#333333",
+                "strokeWidth": 1.5,
+                "strokeDasharray": null
+              }
+            },
+            "visible": true,
+            "shape": "process",
+            "ports": {
+              "groups": {
+                "top": {
+                  "position": "top",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "right": {
+                  "position": "right",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "bottom": {
+                  "position": "bottom",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "left": {
+                  "position": "left",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                }
+              },
+              "items": [
+                {
+                  "group": "top",
+                  "id": "af0f4dfb-f6fc-4d5c-b229-2d7bf1e91eb5"
+                },
+                {
+                  "group": "right",
+                  "id": "af3f2af3-b887-41d5-ad5e-a4012243252f"
+                },
+                {
+                  "group": "bottom",
+                  "id": "28a27b4b-b4f1-46b5-8cb9-5f2fba15a3fc"
+                },
+                {
+                  "group": "left",
+                  "id": "389b4383-78ea-42c4-bd23-812b954ae2c2"
+                }
+              ]
+            },
+            "id": "5eceff3b-3061-43e0-9e91-2132546eac91",
+            "zIndex": 14,
+            "data": {
+              "type": "tm.Process",
+              "name": "Login Logic",
+              "description": "",
               "outOfScope": false,
               "isTrustBoundary": false,
               "reasonOutOfScope": "",
