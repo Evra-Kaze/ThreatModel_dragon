@@ -33,8 +33,8 @@
             },
             "visible": true,
             "shape": "trust-boundary-box",
-            "id": "e254be8e-31ad-403e-a34e-4932379afe17",
             "zIndex": -1,
+            "id": "e254be8e-31ad-403e-a34e-4932379afe17",
             "data": {
               "type": "tm.BoundaryBox",
               "name": "Internet",
@@ -59,8 +59,8 @@
             },
             "visible": true,
             "shape": "trust-boundary-box",
-            "id": "911820d2-0d3b-4b90-972e-f77240e108f9",
             "zIndex": -1,
+            "id": "911820d2-0d3b-4b90-972e-f77240e108f9",
             "data": {
               "type": "tm.BoundaryBox",
               "name": "Front-end",
@@ -85,8 +85,8 @@
             },
             "visible": true,
             "shape": "trust-boundary-box",
-            "id": "0b4fcb96-7ba0-4023-9b97-fbb22dade1d0",
             "zIndex": -1,
+            "id": "0b4fcb96-7ba0-4023-9b97-fbb22dade1d0",
             "data": {
               "type": "tm.BoundaryBox",
               "name": "Outside Services",
@@ -111,8 +111,8 @@
             },
             "visible": true,
             "shape": "trust-boundary-box",
-            "id": "993175aa-d9c7-41a5-9fe3-b78c0fd09386",
             "zIndex": -1,
+            "id": "993175aa-d9c7-41a5-9fe3-b78c0fd09386",
             "data": {
               "type": "tm.BoundaryBox",
               "name": "Logic Layer / Backend",
@@ -137,8 +137,8 @@
             },
             "visible": true,
             "shape": "trust-boundary-box",
-            "id": "bf2c6a01-7dd9-40bd-b995-18dd9de1581f",
             "zIndex": -1,
+            "id": "bf2c6a01-7dd9-40bd-b995-18dd9de1581f",
             "data": {
               "type": "tm.BoundaryBox",
               "name": "Model Layer",
@@ -168,6 +168,7 @@
             },
             "visible": true,
             "shape": "actor",
+            "zIndex": 1,
             "ports": {
               "groups": {
                 "top": {
@@ -251,7 +252,6 @@
               ]
             },
             "id": "25e5642e-b009-4c29-9a30-51623aa7b312",
-            "zIndex": 1,
             "data": {
               "type": "tm.Actor",
               "name": "Web Client",
@@ -285,6 +285,7 @@
             },
             "visible": true,
             "shape": "process",
+            "zIndex": 2,
             "ports": {
               "groups": {
                 "top": {
@@ -368,7 +369,6 @@
               ]
             },
             "id": "0ff50f5d-c0e7-4ee0-8846-8e2e9ca9675c",
-            "zIndex": 2,
             "data": {
               "type": "tm.Process",
               "name": "Revok Web App",
@@ -408,6 +408,7 @@
             },
             "visible": true,
             "shape": "store",
+            "zIndex": 3,
             "ports": {
               "groups": {
                 "top": {
@@ -491,7 +492,6 @@
               ]
             },
             "id": "9aed26e7-a4e2-4346-a8b1-3f4c3d90ca29",
-            "zIndex": 3,
             "data": {
               "type": "tm.Store",
               "name": "User Database",
@@ -529,6 +529,7 @@
             },
             "visible": true,
             "shape": "process",
+            "zIndex": 4,
             "ports": {
               "groups": {
                 "top": {
@@ -612,7 +613,6 @@
               ]
             },
             "id": "faedcbbe-2ff2-4722-9f0c-5be180e50208",
-            "zIndex": 4,
             "data": {
               "type": "tm.Process",
               "name": "Authetication Page",
@@ -652,6 +652,7 @@
             },
             "visible": true,
             "shape": "store",
+            "zIndex": 5,
             "ports": {
               "groups": {
                 "top": {
@@ -735,7 +736,6 @@
               ]
             },
             "id": "bd1c0630-0b51-40bf-9dfb-4e3e0a5ad5a2",
-            "zIndex": 5,
             "data": {
               "type": "tm.Store",
               "name": "Client Cookies",
@@ -1296,9 +1296,105 @@
             ]
           },
           {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Session id",
+              "description": "Used for Authorization inside the AAA framework",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": []
+            },
+            "labels": [
+              "Session id"
+            ],
+            "id": "226b66b4-d73c-4313-802a-a482e99cefe3",
+            "source": {
+              "cell": "bd1c0630-0b51-40bf-9dfb-4e3e0a5ad5a2",
+              "port": "6e148f61-55e0-4c5b-aa76-faf96d3ba429"
+            },
+            "target": {
+              "cell": "7290813f-c482-47d0-b5c8-5effae10eef2",
+              "port": "c72b7f31-04a8-4a0a-b5e2-0a7d50da1bbd"
+            },
+            "vertices": [
+              {
+                "x": -280,
+                "y": 30
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Data Flow",
+              "description": "",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": []
+            },
+            "labels": [
+              "Data Flow"
+            ],
+            "id": "a70dd244-4497-4a01-884d-60c9b65d5923",
+            "source": {
+              "cell": "bd1c0630-0b51-40bf-9dfb-4e3e0a5ad5a2",
+              "port": "6e148f61-55e0-4c5b-aa76-faf96d3ba429"
+            },
+            "target": {
+              "cell": "d7b23eb5-3618-42cf-af51-ca71baf35e47",
+              "port": "c72b7f31-04a8-4a0a-b5e2-0a7d50da1bbd"
+            }
+          },
+          {
             "position": {
               "x": 880,
-              "y": 410
+              "y": 380
             },
             "size": {
               "width": 160,
@@ -1311,8 +1407,8 @@
             },
             "visible": true,
             "shape": "td-text-block",
-            "id": "2b3f9722-49f2-4bac-9ba8-417a1900f7d4",
             "zIndex": 11,
+            "id": "2b3f9722-49f2-4bac-9ba8-417a1900f7d4",
             "data": {
               "type": "tm.Text",
               "name": "The first page a client see",
@@ -1335,8 +1431,8 @@
             },
             "visible": true,
             "shape": "td-text-block",
-            "id": "80cf0887-098b-4758-ab81-ae367f83eee5",
             "zIndex": 12,
+            "id": "80cf0887-098b-4758-ab81-ae367f83eee5",
             "data": {
               "type": "tm.Text",
               "name": "Revok web app act as the browser page the client has open\nEach Processes tied to it will be the individual services they will see.\n",
@@ -1364,6 +1460,7 @@
             },
             "visible": true,
             "shape": "process",
+            "zIndex": 13,
             "ports": {
               "groups": {
                 "top": {
@@ -1447,7 +1544,6 @@
               ]
             },
             "id": "98582c4f-c250-4c2a-bfe1-a152ef8bb2ae",
-            "zIndex": 13,
             "data": {
               "type": "tm.Process",
               "name": "2FA",
@@ -1484,6 +1580,7 @@
             },
             "visible": true,
             "shape": "process",
+            "zIndex": 14,
             "ports": {
               "groups": {
                 "top": {
@@ -1567,7 +1664,6 @@
               ]
             },
             "id": "5eceff3b-3061-43e0-9e91-2132546eac91",
-            "zIndex": 14,
             "data": {
               "type": "tm.Process",
               "name": "Login Logic",
@@ -1604,6 +1700,7 @@
             },
             "visible": true,
             "shape": "process",
+            "zIndex": 15,
             "ports": {
               "groups": {
                 "top": {
@@ -1687,7 +1784,6 @@
               ]
             },
             "id": "727d0b06-8189-4b78-9254-f09003212e4c",
-            "zIndex": 15,
             "data": {
               "type": "tm.Process",
               "name": "WAF",
@@ -1724,6 +1820,7 @@
             },
             "visible": true,
             "shape": "process",
+            "zIndex": 16,
             "ports": {
               "groups": {
                 "top": {
@@ -1807,7 +1904,6 @@
               ]
             },
             "id": "dcc259fd-348a-4603-b0c5-e1bdcb5e3fa5",
-            "zIndex": 16,
             "data": {
               "type": "tm.Process",
               "name": "IPS/IDS",
@@ -1844,6 +1940,7 @@
             },
             "visible": true,
             "shape": "process",
+            "zIndex": 17,
             "ports": {
               "groups": {
                 "top": {
@@ -1927,7 +2024,6 @@
               ]
             },
             "id": "9d2f1813-a2d4-4a30-a531-8ab46c7b12d1",
-            "zIndex": 17,
             "data": {
               "type": "tm.Process",
               "name": "SIEM",
@@ -1967,6 +2063,7 @@
             },
             "visible": true,
             "shape": "store",
+            "zIndex": 18,
             "ports": {
               "groups": {
                 "top": {
@@ -2050,7 +2147,6 @@
               ]
             },
             "id": "8e6f4f82-cb80-41a9-b944-d82237ba9da3",
-            "zIndex": 18,
             "data": {
               "type": "tm.Store",
               "name": "Logs",
@@ -2066,6 +2162,366 @@
               "storesInventory": false,
               "threats": []
             }
+          },
+          {
+            "position": {
+              "x": -551.0000000000002,
+              "y": 172.00000000000068
+            },
+            "size": {
+              "width": 160,
+              "height": 160
+            },
+            "attrs": {
+              "text": {
+                "text": "Action Authentication [A0]"
+              },
+              "body": {
+                "stroke": "#333333",
+                "strokeWidth": 1.5,
+                "strokeDasharray": null
+              }
+            },
+            "visible": true,
+            "shape": "process",
+            "ports": {
+              "groups": {
+                "top": {
+                  "position": "top",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "right": {
+                  "position": "right",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "bottom": {
+                  "position": "bottom",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "left": {
+                  "position": "left",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                }
+              },
+              "items": [
+                {
+                  "group": "top",
+                  "id": "c72b7f31-04a8-4a0a-b5e2-0a7d50da1bbd"
+                },
+                {
+                  "group": "right",
+                  "id": "e6cbbfa4-e73e-460e-a12c-a0a7a35d4987"
+                },
+                {
+                  "group": "bottom",
+                  "id": "9c468d7b-cf8b-4fda-91ad-40ccb49fc52c"
+                },
+                {
+                  "group": "left",
+                  "id": "0489a44e-d78b-4b47-a69d-67b08ad7b67c"
+                }
+              ]
+            },
+            "id": "7290813f-c482-47d0-b5c8-5effae10eef2",
+            "zIndex": 19,
+            "data": {
+              "type": "tm.Process",
+              "name": "Action Authentication [A0]",
+              "description": "Any action that required the authentication of a user using something other than the credential. Basicaly, we make sure the user is who they are for every action without asking for username:password",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "handlesCardPayment": false,
+              "handlesGoodsOrServices": false,
+              "isWebApplication": false,
+              "privilegeLevel": "",
+              "threats": []
+            }
+          },
+          {
+            "position": {
+              "x": -551.0000000000002,
+              "y": 380
+            },
+            "size": {
+              "width": 160,
+              "height": 160
+            },
+            "attrs": {
+              "text": {
+                "text": "Action Authorization [A1]"
+              },
+              "body": {
+                "stroke": "#333333",
+                "strokeWidth": 1.5,
+                "strokeDasharray": null
+              }
+            },
+            "visible": true,
+            "shape": "process",
+            "ports": {
+              "groups": {
+                "top": {
+                  "position": "top",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "right": {
+                  "position": "right",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "bottom": {
+                  "position": "bottom",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "left": {
+                  "position": "left",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                }
+              },
+              "items": [
+                {
+                  "group": "top",
+                  "id": "c72b7f31-04a8-4a0a-b5e2-0a7d50da1bbd"
+                },
+                {
+                  "group": "right",
+                  "id": "e6cbbfa4-e73e-460e-a12c-a0a7a35d4987"
+                },
+                {
+                  "group": "bottom",
+                  "id": "9c468d7b-cf8b-4fda-91ad-40ccb49fc52c"
+                },
+                {
+                  "group": "left",
+                  "id": "0489a44e-d78b-4b47-a69d-67b08ad7b67c"
+                }
+              ]
+            },
+            "id": "d7b23eb5-3618-42cf-af51-ca71baf35e47",
+            "data": {
+              "type": "tm.Process",
+              "name": "Action Authorization [A1]",
+              "description": "Any action that required the authentication of a user using something other than the credential. Basicaly, we make sure the user is who they are for every action without asking for username:password",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "handlesCardPayment": false,
+              "handlesGoodsOrServices": false,
+              "isWebApplication": false,
+              "privilegeLevel": "",
+              "threats": []
+            },
+            "zIndex": 20
+          },
+          {
+            "position": {
+              "x": -519.0000000000002,
+              "y": 412
+            },
+            "size": {
+              "width": 160,
+              "height": 160
+            },
+            "attrs": {
+              "text": {
+                "text": "Action Authorization [A1]"
+              },
+              "body": {
+                "stroke": "#333333",
+                "strokeWidth": 1.5,
+                "strokeDasharray": null
+              }
+            },
+            "visible": true,
+            "shape": "process",
+            "ports": {
+              "groups": {
+                "top": {
+                  "position": "top",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "right": {
+                  "position": "right",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "bottom": {
+                  "position": "bottom",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "left": {
+                  "position": "left",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                }
+              },
+              "items": [
+                {
+                  "group": "top",
+                  "id": "c72b7f31-04a8-4a0a-b5e2-0a7d50da1bbd"
+                },
+                {
+                  "group": "right",
+                  "id": "e6cbbfa4-e73e-460e-a12c-a0a7a35d4987"
+                },
+                {
+                  "group": "bottom",
+                  "id": "9c468d7b-cf8b-4fda-91ad-40ccb49fc52c"
+                },
+                {
+                  "group": "left",
+                  "id": "0489a44e-d78b-4b47-a69d-67b08ad7b67c"
+                }
+              ]
+            },
+            "id": "a3a72528-0562-4200-bb80-296bf581c674",
+            "data": {
+              "type": "tm.Process",
+              "name": "Action Authorization [A1]",
+              "description": "Any action that required the authentication of a user using something other than the credential. Basicaly, we make sure the user is who they are for every action without asking for username:password",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "handlesCardPayment": false,
+              "handlesGoodsOrServices": false,
+              "isWebApplication": false,
+              "privilegeLevel": "",
+              "threats": []
+            },
+            "zIndex": 21
           }
         ]
       }
